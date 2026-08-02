@@ -1,0 +1,100 @@
+// Public types. The consumed shapes mirror create-packkit's deployment contract
+// structurally, so this package needs no type-level dependency on it — a host
+// passes plain objects. See create-packkit/embedded for the authoritative types.
+
+export interface StaticDeploymentContract {
+	type: 'static';
+	buildCommand: string;
+	outputDirectory: string;
+}
+
+/** Any deployment contract create-packkit may hand us; only 'static' is
+ *  supported in 0.1.0, the rest are reported unsupported. */
+export interface DeploymentContractLike {
+	type: string;
+	buildCommand?: string;
+	outputDirectory?: string;
+	[key: string]: unknown;
+}
+
+/** The minimum a project object must carry for this provider to act on it. */
+export interface ProjectLike {
+	deploymentContract: DeploymentContractLike;
+	[key: string]: unknown;
+}
+
+export interface UnsupportedReason {
+	code: string;
+	message: string;
+}
+
+export interface SupportResult {
+	supported: boolean;
+	reasons: UnsupportedReason[];
+}
+
+export interface RepositoryInput {
+	provider?: string;
+	owner: string;
+	name: string;
+	branch?: string;
+}
+
+export interface ResolvedRepository {
+	provider: string;
+	owner: string;
+	name: string;
+	branch: string;
+}
+
+export interface BuildSettings {
+	command: string;
+	publishDirectory: string;
+}
+
+export interface PrepareResult {
+	files: Record<string, string>;
+}
+
+export interface CreateSiteOperation {
+	type: 'create-site';
+	site: { name: string };
+	repository: ResolvedRepository;
+	build: BuildSettings;
+}
+
+export type NetlifyOperation = CreateSiteOperation;
+
+export interface NetlifyPlan {
+	provider: 'netlify';
+	site: { name: string };
+	repository: ResolvedRepository;
+	build: BuildSettings;
+	files: Record<string, string>;
+	operations: NetlifyOperation[];
+}
+
+export interface CreateSiteResult {
+	id?: string;
+	name?: string;
+	url?: string;
+	adminUrl?: string;
+	[key: string]: unknown;
+}
+
+/** The host-supplied client. The provider calls it; it never constructs one, so
+ *  credentials stay entirely on the host side. */
+export interface NetlifyClient {
+	createSite(input: {
+		name: string;
+		repository: ResolvedRepository;
+		build: BuildSettings;
+	}): Promise<CreateSiteResult> | CreateSiteResult;
+}
+
+export interface ApplyResult {
+	provider: 'netlify';
+	status: 'applied';
+	site?: CreateSiteResult;
+	applied: Array<{ type: 'create-site'; site: CreateSiteResult }>;
+}
