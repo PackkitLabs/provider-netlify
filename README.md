@@ -17,7 +17,7 @@ create-packkit  ──►  GeneratedProject.deploymentContract  ──►  @pack
 
 ## Requirements
 
-Node.js >= 24.0.0 (`.nvmrc` pins 24.18.0; run `nvm use`). Enforced via `engine-strict`, so installs fail fast on an unsupported version.
+Node.js >= 20 — matching `create-packkit`'s own floor, so any host that can run the generator can install this provider. (The repo's `.nvmrc` pins a current release for local development.)
 
 ## Install
 
