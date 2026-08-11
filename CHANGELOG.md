@@ -1,0 +1,31 @@
+# Changelog
+
+All notable changes to `@packkit/provider-netlify` are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.1.1] - 2026-08-03
+
+### Fixed
+
+- Lowered the Node engine floor from `>=24` to `>=20`. The provider is
+  dependency-free runtime code with no Node 24 requirement and embeds in host
+  apps that run `create-packkit` on Node `>=20`; requiring 24 blocked Node 20/22
+  hosts from installing. Now matches create-packkit's floor. README requirements
+  updated to match.
+
+## [0.1.0] - 2026-08-02
+
+### Added
+
+- Initial release of the static Netlify deployment provider for
+  Packkit-generated projects. Consumes a project's deployment contract to plan
+  and apply a Netlify site, coupling to the contract structurally (no import of
+  create-packkit).
+
+[Unreleased]: https://github.com/PackkitJS/provider-netlify/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/PackkitJS/provider-netlify/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/PackkitJS/provider-netlify/releases/tag/v0.1.0
