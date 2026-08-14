@@ -1,5 +1,5 @@
 {
-	"$schema": "https://packkitjs.github.io/create-packkit/packkit.schema.json",
+	"$schema": "https://packkitjs.github.io/create-packkit-js/packkit.schema.json",
 	"generator": "create-packkit",
 	"version": "3.3.1",
 	"preset": "ts-lib",
