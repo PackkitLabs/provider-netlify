@@ -1,6 +1,6 @@
 import type { CreateSiteResult, DeploymentContractLike, ProjectLike } from './types.js';
 
-// Hand-built fixtures mirror the shape create-packkit's `deriveDeploymentContract`
+// Hand-built fixtures mirror the shape a generator's deployment-contract derivation
 // produces, without importing it — so the unit tests stay fast and focused.
 export const staticProject = (contract: Partial<DeploymentContractLike> = {}): ProjectLike => ({
 	deploymentContract: {

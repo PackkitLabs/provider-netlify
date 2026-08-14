@@ -1,14 +1,19 @@
+import type { DeploymentType } from '@packkit/core';
 import type { DeploymentContractLike, SupportResult } from './types.js';
 import { NetlifyProviderError } from './errors.js';
 
-// Support detection reads only the provider-neutral deployment contract that
-// create-packkit derives — never raw config booleans or framework names. That
-// keeps the provider decoupled from how Packkit decided the project is static.
+// Support detection reads only the provider-neutral `@packkit/core` deployment
+// contract a generator derives — never raw config, frameworks, or the language.
+// That keeps the provider decoupled from how (or in what language) a project was
+// generated: any generator's static contract is supported the same way.
 //
 // 0.1.0 supports a single static site only. A `fullstack` contract carries a
 // static `frontend`, but deploying half of a fullstack app is a deliberate
 // 0.2+ decision, so we report it unsupported rather than guessing.
-const SUPPORTED_TYPES = new Set(['static']);
+// The supported subset of `@packkit/core`'s DeploymentType (validated against the
+// core union at construction), kept as a string set so any host-provided type can
+// be tested for membership.
+const SUPPORTED_TYPES: ReadonlySet<string> = new Set<DeploymentType>(['static']);
 
 export function supports(contract: DeploymentContractLike | undefined): SupportResult {
 	if (!contract || typeof contract.type !== 'string') {
