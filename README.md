@@ -2,7 +2,7 @@
 
 > Netlify deployment provider for [Packkit](https://www.npmjs.com/package/create-packkit)-generated projects.
 
-[![npm](https://img.shields.io/npm/v/%40packkit%2Fprovider-netlify.svg)](https://www.npmjs.com/package/@packkit/provider-netlify) [![CI](https://github.com/PackkitJS/provider-netlify/actions/workflows/ci.yml/badge.svg)](https://github.com/PackkitJS/provider-netlify/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/%40packkit%2Fprovider-netlify.svg)](https://www.npmjs.com/package/@packkit/provider-netlify) [![CI](https://github.com/PackkitLabs/provider-netlify/actions/workflows/ci.yml/badge.svg)](https://github.com/PackkitLabs/provider-netlify/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Packkit generates a project and describes how to deploy it in a provider-neutral
 **deployment contract**. This package turns that contract into a Netlify site —

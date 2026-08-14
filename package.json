@@ -2,13 +2,13 @@
 	"name": "@packkit/provider-netlify",
 	"version": "0.1.3",
 	"description": "Netlify deployment provider for Packkit-generated projects — consumes a project's deployment contract to plan and apply a Netlify site.",
-	"homepage": "https://github.com/PackkitJS/provider-netlify#readme",
+	"homepage": "https://github.com/PackkitLabs/provider-netlify#readme",
 	"bugs": {
-		"url": "https://github.com/PackkitJS/provider-netlify/issues"
+		"url": "https://github.com/PackkitLabs/provider-netlify/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/PackkitJS/provider-netlify.git"
+		"url": "git+https://github.com/PackkitLabs/provider-netlify.git"
 	},
 	"license": "MIT",
 	"author": "DanMat <dannymatthew@gmail.com>",

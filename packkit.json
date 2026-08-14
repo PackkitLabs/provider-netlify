@@ -1,12 +1,12 @@
 {
-	"$schema": "https://packkitjs.github.io/create-packkit-js/packkit.schema.json",
+	"$schema": "https://packkitlabs.github.io/create-packkit-js/packkit.schema.json",
 	"generator": "create-packkit",
 	"version": "3.3.1",
 	"preset": "ts-lib",
 	"settings": {
 		"description": "Netlify deployment provider for Packkit-generated projects — consumes a project's deployment contract to plan and apply a Netlify site.",
 		"author": "DanMat <dannymatthew@gmail.com>",
-		"repo": "https://github.com/PackkitJS/provider-netlify",
+		"repo": "https://github.com/PackkitLabs/provider-netlify",
 		"pkgChecks": true,
 		"workflows": ["ci"]
 	},
