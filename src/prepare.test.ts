@@ -19,7 +19,7 @@ describe('prepare', () => {
 
 	it('throws a typed error for an unsupported project', () => {
 		try {
-			prepare({ project: projectWithContract({ type: 'node-service' }) });
+			prepare({ project: projectWithContract({ type: 'service' }) });
 			expect.fail('expected prepare to throw');
 		} catch (error) {
 			expect(error).toBeInstanceOf(NetlifyProviderError);

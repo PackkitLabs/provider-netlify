@@ -12,7 +12,7 @@ describe('supports', () => {
 	});
 
 	it('rejects non-static deployment types with a code', () => {
-		for (const type of ['node-service', 'fullstack', 'cli', 'library']) {
+		for (const type of ['service', 'fullstack', 'cli', 'library']) {
 			const result = supports({ type });
 			expect(result.supported).toBe(false);
 			expect(result.reasons[0]?.code).toBe('UNSUPPORTED_DEPLOYMENT_TYPE');
