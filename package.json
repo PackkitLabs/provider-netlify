@@ -1,6 +1,6 @@
 {
 	"name": "@packkit/provider-netlify",
-	"version": "0.1.3",
+	"version": "0.2.0",
 	"description": "Netlify deployment provider for Packkit-generated projects — consumes a project's deployment contract to plan and apply a Netlify site.",
 	"homepage": "https://github.com/PackkitLabs/provider-netlify#readme",
 	"bugs": {
