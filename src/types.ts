@@ -70,6 +70,8 @@ export type NetlifyOperation = CreateSiteOperation;
 
 export interface NetlifyPlan {
 	provider: 'netlify';
+	/** Plan schema version, so a host can persist and evolve the shape. */
+	schemaVersion: number;
 	site: { name: string };
 	repository: ResolvedRepository;
 	build: BuildSettings;

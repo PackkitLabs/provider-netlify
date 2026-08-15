@@ -8,6 +8,9 @@ import { prepare } from './prepare.js';
 import { assertSupported } from './supports.js';
 import { NetlifyProviderError } from './errors.js';
 
+/** Bump when the plan shape changes. */
+export const PLAN_SCHEMA_VERSION = 1;
+
 // Pure: produce a deterministic provisioning plan from a supported project and a
 // repository descriptor. It describes *what* apply() will do without doing any of
 // it — no network, no client. The generated netlify.toml is included so the host
@@ -46,6 +49,7 @@ export function plan({
 
 	return {
 		provider: 'netlify',
+		schemaVersion: PLAN_SCHEMA_VERSION,
 		site: { name: siteName },
 		repository: repo,
 		build,
